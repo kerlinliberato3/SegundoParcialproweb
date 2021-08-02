@@ -1,0 +1,2 @@
+# “SegundoParcialproweb”
+En este repositorio se encuentra el proyecto desarrollado con  los Requisitos que usted  nos asigna con la facilidad de las  librerías posteadas en virtual y por ende elegir una para cumplir con   lo pedido Consta  de un  Todo List que conlleve  agregar, buscar, editar y eliminar. De igual manera realizar la investigación de la framework  seleccionado  para la elaboración de nuestro segundo parcial. 
