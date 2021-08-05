@@ -1,24 +1,42 @@
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <nav class="navbar navbar-dark bg-primary">
   <a class="navbar-brand" href="/">
-    Hola 
+    <h1>Aqui puedes crear tu lista</h1> 
   </a>
 </nav>
+
 <div class="container">
 <div class="row">
 <div class="col.md-8">
-<ul class="list-group">
+  <div style="padding-top: 10px;" class="form-group">
+   
+    
+  </div>
+<ul class="list-group" style="padding-top: 20px;">
   <li 
     *ngFor="let productos of productoArray"
-    class="list-group-item">
-    {{Productos.pais}}
+    class="list-group-item list-group-item-action"
+    (click)="abrir(productos)"
+    [class.active]="productos == selecproductos">
+    <span class="badge badge-primary">{{productos.id}}</span> {{productos.name}} 
   </li>  
 </ul>
-<div class="card mt-4">
+<div class="card mt-10">
   <div class="card.body">
     <div class="card-title">
-      Ingrese un producto
+      
+      <div class="form-group">
+        <input type="text" [(ngModel)]="selecproductos.name" placeholder="Escribir" class="form-control">
+      </div>
+      <button (click)="addoeditar()" class="btn btn-primary">
+        OK
+      </button>
+      <button
+        *ngIf="selecproductos.id !==0"
+        class="btn btn-danger"
+        (click)="eliminar()">
+        Eliminar
+      </button>
     </div>
   </div>
 </div>
@@ -26,17 +44,4 @@
 </div>
 </div>
 
-
-
-
-
-
-
-<style>
-  body{
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-}
-</style>
+<app-posts style="margin: 5%;"></app-posts>

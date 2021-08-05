@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PostsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+import{ FormsModule } from '@angular/forms';
+import { PostsComponent } from './components/posts/posts.component';
+import { FilterPipe } from './pipes/filter.pipe';
